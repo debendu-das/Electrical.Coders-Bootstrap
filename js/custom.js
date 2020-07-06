@@ -14,13 +14,13 @@
     //   $(".navbar-collapse").collapse('hide');
     // });
 
-    // $(window).scroll(function() {
-    //   if ($(".navbar").offset().top > 50) {
-    //     $(".navbar-fixed-top").addClass("top-nav-collapse");
-    //       } else {
-    //         $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    //       }
-    // });
+    $(window).scroll(function() {
+      if ($(".navbar").offset().top > 50) {
+        $(".navbar").addClass("scrolled");
+          } else {
+            $(".navbar").removeClass("scrolled");
+          }
+    });
 
 
     // // PARALLAX EFFECT
@@ -119,3 +119,13 @@
         moreText.style.display = "inline";
       }
     }
+{/* <script src="../../assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script> */}
+
+// <!-- JS Plugins Init. -->
+
+  $(document).on('ready', function () {
+    // initialization of show animations
+    $('.js-animation-link').each(function () {
+      var showAnimation = new HSShowAnimation($(this)).init();
+    });
+  });
